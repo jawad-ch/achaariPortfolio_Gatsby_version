@@ -11,6 +11,7 @@ module.exports = {
     description: `Full-Stack WebDeveloper`,
     url: "https://achaarijaouad.netlify.app",
     image: "/AchaariPortfolio.png",
+    favicon: "/logo.png",
     twitterUsername: "@Jaouad99678541",
   },
   plugins: [

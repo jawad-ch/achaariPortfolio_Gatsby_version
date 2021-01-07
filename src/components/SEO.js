@@ -9,6 +9,7 @@ const query = graphql`
         siteTitle: title
         siteDesc: description
         siteUrl: url
+        favicon
         image
         twitterUsername
       }
@@ -22,6 +23,7 @@ const SEO = () => {
     siteTitle,
     siteDesc,
     siteUrl,
+    favicon,
     image,
     twitterUsername,
   } = site.siteMetadata;
@@ -31,6 +33,7 @@ const SEO = () => {
       title={`${siteTitle} | ${siteDesc}`}
     >
       <meta name="description" content={siteDesc} />
+      <link rel="icon" href={`${siteUrl}${favicon}`} />
       <meta name="image" content={image} />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:creator" content={twitterUsername} />
