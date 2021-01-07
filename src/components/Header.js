@@ -1,9 +1,10 @@
-import React, { Fragment, useEffect, useState } from "react"
-import { Link } from "react-scroll"
-import { StickyHeader, SideNav, Humburger } from "../style/StyledHeader"
+import React, { Fragment, useEffect, useState } from "react";
+import { Link } from "react-scroll";
+import { StickyHeader, SideNav, Humburger } from "../style/StyledHeader";
+import achaariResume from "../assets/achaariResume.pdf";
 
 const Header = () => {
-  const [openLeftSide, setstate] = useState(false)
+  const [openLeftSide, setstate] = useState(false);
 
   const Links = () => (
     <Fragment>
@@ -34,26 +35,26 @@ const Header = () => {
       <a
         target="_blank"
         rel="noopener noreferrer"
-        href="somewhere"
+        href={achaariResume}
         className="navLink navbar__resume btn"
       >
         Resume
       </a>
     </Fragment>
-  )
+  );
 
   const stickyHeader = () => {
-    var header = document.querySelector("#header")
-    var scrollTop = window.scrollY
+    var header = document.querySelector("#header");
+    var scrollTop = window.scrollY;
     scrollTop > 210
       ? header.classList.add("scrolled")
-      : header.classList.remove("scrolled")
-  }
+      : header.classList.remove("scrolled");
+  };
 
   useEffect(() => {
-    window.addEventListener("scroll", () => stickyHeader())
-    return () => window.removeEventListener("scroll", () => stickyHeader())
-  }, [])
+    window.addEventListener("scroll", () => stickyHeader());
+    return () => window.removeEventListener("scroll", () => stickyHeader());
+  }, []);
 
   return (
     <StickyHeader id="header">
@@ -82,7 +83,7 @@ const Header = () => {
         <Links />
       </SideNav>
     </StickyHeader>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
